@@ -1,0 +1,7 @@
+main: me.thesaltyboys.plugin.Main
+name: RandomPlugin
+version: 1.1
+api-version: 1.16
+authors:
+  - MartHus
+  - KMatias
