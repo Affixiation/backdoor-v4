@@ -34,7 +34,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '11'
-        distribution: '11'
+        distribution: 'adopt'
     - name: '1.16.5 build with maven'
       run: |
         cd backdoor-1.16.5
