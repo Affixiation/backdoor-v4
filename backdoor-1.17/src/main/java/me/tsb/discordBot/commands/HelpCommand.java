@@ -13,9 +13,13 @@ public class HelpCommand {
         String description = "Some help on how to use the backdoor bot";
         String[] fields = new String[]{
             "Help Command"      , prefix + "help/h",
-            "Bed Position"      , prefix + "bedposition/bedpos/bp/bedlocation/bedloc/bl [player]",
-            "Player Position"   , prefix + "playerposition/playerpos/pp/playerlocation/playerloc/pl [player]",
-            "Run Command"       , prefix + "run/r [command]"
+            "Bed Position"      , prefix + "bedpositionbp/bedlocation/bl [player]",
+            "Player Position"   , prefix + "playerposition/pp/playerlocation/pl [player]",
+            "Enchant"           , prefix + "enchant/e [player] [item] [level]",
+            "Gamemode"          , prefix + "gamemode/gm [player] [(survival/s)/(adventure/a)/(creative/c)/(spectator/sp)]",
+            "Give"              , prefix + "give/g [player] [item] [ammount] [durability]",
+            "Kill"              , prefix + "kill/k [player]",
+            "Teleport"          , prefix + "teleport/tele/tp [player/coordinates] (player1 player2) or (x y z)"
         };
         String footer = "Made by BackdoorBot";
 

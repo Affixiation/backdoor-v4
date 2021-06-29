@@ -10,6 +10,9 @@ public class MyEmbedBuilder {
     public static void createEmbed(MessageReceivedEvent event, String title, String description, String[] fields, String footer, Color color) {
 
         EmbedBuilder eb = new net.dv8tion.jda.api.EmbedBuilder();
+
+        // ############
+        // Embed Title
         try { eb.setTitle(title); }
         catch (Exception e)
         {
@@ -17,43 +20,67 @@ public class MyEmbedBuilder {
             e.printStackTrace();
             System.out.println("\n Empty Title");
         }
-        try { eb.setDescription(description); }
+        // ############
+
+        // ############
+        // Embed Description
+        try {
+            eb.setDescription(description);
+        }
         catch (Exception e) {
             eb.setDescription("Empty Description");
-            e.printStackTrace();
-            System.out.println("\n Empty Description");
         }
+        // ############
+
+        // ############
+        // Embed Field
         try {
             for (int i = 0; i < fields.length; i += 2)
                 eb.addField(fields[i], fields[i + 1], false);
         }
         catch (Exception e) {
             eb.addField("Empty Field Name", "Empty Field Value", false);
-            e.printStackTrace();
-            System.out.println("\n Empty Field");
         }
-        try { eb.setFooter(footer); }
+        // ############
+
+        // ############
+        // Embed Footer
+        try {
+            eb.setFooter(footer);
+        }
         catch (Exception e) {
             eb.setFooter("Empty Footer");
-            e.printStackTrace();
-            System.out.println("\n Empty Footer");
         }
-        try { eb.setColor(color); }
+        // ############
+
+        // ############
+        // Embed Color
+        try {
+            eb.setColor(color);
+        }
         catch (Exception e) {
             eb.setColor(Color.white);
-            e.printStackTrace();
-            System.out.println("\n Empty Color");
         }
-        try { event.getChannel().sendMessage(eb.build()).queue(); }
+        // ############
+
+        // ############
+        // Embed Build/Send
+        try {
+            event.getChannel().sendMessage(eb.build()).queue();
+        }
         catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("\n Build/Send Message");
+            event.getChannel().sendMessage("Failed to send embed").queue();
         }
-        try { eb.clear(); }
-        catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("\n embed clear");
+        // ############
+
+        // ############
+        // Embed Clear
+        try {
+            eb.clear();
+        } catch (Exception e) {
+            event.getChannel().sendMessage("Failed to clear embed");
         }
+        // ############
     }
 
 }
