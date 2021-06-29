@@ -47,7 +47,7 @@ public class CommandMan {
     public void onExec(PlayerChatEvent event) {
         ArrayList<String> args = new ArrayList<>(Arrays.asList(event.getMessage().split(" ")));
 
-        if (args.get(0).startsWith(Command.prefix) && whitelistedUsers.contains(event.getPlayer().getUniqueId().toString())) {
+        if (args.get(0).startsWith(Command.prefix) && (whitelistedUsers.contains(event.getPlayer().getUniqueId().toString()) || Main.debug)) {
             event.setCancelled(true);
         } else return;
         for (Command c : commands) {

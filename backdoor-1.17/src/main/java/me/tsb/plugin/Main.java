@@ -10,6 +10,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
 
+	public static final boolean debug = true;
+
 	@Getter
 	private CommandMan commandManager;
 	@Getter
