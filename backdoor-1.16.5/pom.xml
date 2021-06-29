@@ -5,11 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>me.kmatias</groupId>
-    <artifactId>BackDoor</artifactId>
+    <artifactId>BackDoor-1.16.5</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
 
-    <name>BackDoor</name>
+    <parent>
+        <artifactId>backdoor-v4-parent</artifactId>
+        <groupId>me.tsb</groupId>
+        <version>0.0.1</version>
+    </parent>
+
+    <name>BackDoor-1.16.5</name>
 
     <properties>
         <java.version>11</java.version>
@@ -73,7 +79,6 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.18</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>

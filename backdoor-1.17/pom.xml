@@ -2,23 +2,26 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-
-    <groupId>me.kmatias</groupId>
-    <artifactId>BackDoor-1.12.2</artifactId>
-    <version>0.0.1</version>
-    <packaging>jar</packaging>
-
-    <name>BackDoor-1.12.2</name>
-
     <parent>
         <artifactId>backdoor-v4-parent</artifactId>
         <groupId>me.tsb</groupId>
         <version>0.0.1</version>
     </parent>
 
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>me.kmatias</groupId>
+    <artifactId>backdoor-1.17</artifactId>
+    <version>0.0.2</version>
+    <packaging>jar</packaging>
+
+    <name>BackDoor-1.17</name>
+
     <properties>
-        <java.version>1.8</java.version>
+        <maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.target>16</maven.compiler.target>
+
+        <java.version>16</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -71,9 +74,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.destroystokyo.paper</groupId>
+            <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>1.12.2-R0.1-SNAPSHOT</version>
+            <version>1.17-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
 
@@ -82,7 +85,11 @@
             <artifactId>lombok</artifactId>
             <scope>compile</scope>
         </dependency>
-    </dependencies>
 
+        <dependency>
+            <groupId>org.reflections</groupId>
+            <artifactId>reflections</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
