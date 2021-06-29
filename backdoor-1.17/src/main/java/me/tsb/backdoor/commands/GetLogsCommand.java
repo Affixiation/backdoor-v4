@@ -17,6 +17,6 @@ public class GetLogsCommand extends Command {
     @Override
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {
 
-        event.getPlayer().sendMessage(main.getLogger().getLogs());
+        event.getPlayer().sendMessage(main.getSilentLogger().getLogs());
     }
 }

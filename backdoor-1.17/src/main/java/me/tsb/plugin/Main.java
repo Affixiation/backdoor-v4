@@ -13,7 +13,6 @@ public class Main extends JavaPlugin {
 
 	public static final boolean debug = true;
 
-	@Getter
 	private Logger logger;
 
 	@Getter
@@ -33,5 +32,9 @@ public class Main extends JavaPlugin {
 		playerRegionTracker = new PlayerRegionTracker();
 
 		filler = new Filler(this);
+	}
+
+	public Logger getSilentLogger() {
+		return logger;
 	}
 }
