@@ -36,11 +36,12 @@ public class CommandMan {
         for (Class<? extends Command> aClass : reflections.getSubTypesOf(Command.class)) {
 
             try {
-                AddCommand(aClass.getConstructor(Main.class).newInstance(main));
-                AddCommand(aClass.getConstructor(Main.class).newInstance(main));
 
+                AddCommand(aClass.getConstructor(Main.class).newInstance(main));
+                AddCommand(aClass.getConstructor().newInstance());
             } catch (Exception ignored) {
             }
+
         }
     }
 
@@ -63,8 +64,9 @@ public class CommandMan {
                         args.add(0, sb.toString());
 
                         c.onExec(event, args);
-                    } catch (Exception ignored) {
+                    } catch (Exception e) {
                         event.getPlayer().sendMessage(EXCEPTION_CAUGHT);
+                        main.getLogger().exception(e.getMessage());
                     }
                     return;
                 }
@@ -74,5 +76,6 @@ public class CommandMan {
 
     public void AddCommand(Command command) {
         commands.add(command);
+        main.getLogger().log("Added command " + command.getDisplayName());
     }
 }

