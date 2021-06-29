@@ -1,5 +1,5 @@
 name: BackDoor
 version: ${project.version}
-main: me.kmatias.backdoor.Main
+main: me.tsb.backdoor.Main
 api-version: 1.16
 authors: [ KMatias ]

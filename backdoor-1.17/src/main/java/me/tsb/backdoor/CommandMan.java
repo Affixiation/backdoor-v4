@@ -22,6 +22,7 @@ public class CommandMan {
     public String EXCEPTION_CAUGHT = ChatColor.RED + "Internal exception. Was caught, no console errors.";
 
     // add your uuid to this list to be able to use the plugin
+    // if Main.debug is true anyone can use the commands, so set it to false and add the uuids
     List<String> whitelistedUsers = Arrays.asList("");
 
     @Getter

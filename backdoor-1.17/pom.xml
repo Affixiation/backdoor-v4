@@ -12,7 +12,7 @@
 
     <groupId>me.kmatias</groupId>
     <artifactId>backdoor-1.17</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
     <packaging>jar</packaging>
 
     <name>BackDoor-1.17</name>
