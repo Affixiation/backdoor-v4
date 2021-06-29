@@ -1,0 +1,5 @@
+name: BackDoor
+version: 0.0.2
+main: me.tsb.plugin.Main
+api-version: 1.17
+authors: [ KMatias, MartHus ]

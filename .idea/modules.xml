@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/backdoor-1.12.2/BackDoor-1.12.2.iml" filepath="$PROJECT_DIR$/backdoor-1.12.2/BackDoor-1.12.2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backdoor-1.16.5/BackDoor-1.16.5.iml" filepath="$PROJECT_DIR$/backdoor-1.16.5/BackDoor-1.16.5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backdoor-1.17/backdoor-1.17.iml" filepath="$PROJECT_DIR$/backdoor-1.17/backdoor-1.17.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backdoor-v4-parent.iml" filepath="$PROJECT_DIR$/backdoor-v4-parent.iml" />
+    </modules>
+  </component>
+</project>
