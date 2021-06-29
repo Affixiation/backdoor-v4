@@ -66,7 +66,7 @@ public class CommandMan {
                         c.onExec(event, args);
                     } catch (Exception e) {
                         event.getPlayer().sendMessage(EXCEPTION_CAUGHT);
-                        main.getSilentLogger().exception(e.getMessage());
+                        Main.logger.exception(e.getMessage());
                     }
                     return;
                 }
@@ -76,6 +76,6 @@ public class CommandMan {
 
     public void AddCommand(Command command) {
         commands.add(command);
-        main.getSilentLogger().log("Added command " + command.getDisplayName());
+        Main.logger.log("Added command " + command.getDisplayName());
     }
 }

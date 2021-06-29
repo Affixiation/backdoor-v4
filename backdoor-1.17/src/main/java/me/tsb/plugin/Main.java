@@ -11,30 +11,33 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
 
-	public static final boolean debug = true;
+    public static final boolean debug = true;
 
-	private Logger logger;
+    public static Main INSTANCE;
 
-	@Getter
-	private CommandMan commandManager;
-	@Getter
-	private Filler filler;
-	@Getter
-	private PlayerRegionTracker playerRegionTracker;
-	
-	public void onEnable() {
+    public static Logger logger;
 
-		this.getServer().getPluginManager().registerEvents(new PlayerChat(this), this);
-		this.getServer().getPluginManager().registerEvents(new ConnectionEvents(this), this);
+    @Getter
+    private CommandMan commandManager;
+    @Getter
+    private Filler filler;
+    @Getter
+    private PlayerRegionTracker playerRegionTracker;
 
-		commandManager = new CommandMan(this);
-		commandManager.init();
-		playerRegionTracker = new PlayerRegionTracker();
+    public Main() {
+        INSTANCE = this;
+        logger = new Logger(this.getName());
+    }
 
-		filler = new Filler(this);
-	}
+    public void onEnable() {
 
-	public Logger getSilentLogger() {
-		return logger;
-	}
+        this.getServer().getPluginManager().registerEvents(new PlayerChat(this), this);
+        this.getServer().getPluginManager().registerEvents(new ConnectionEvents(this), this);
+
+        commandManager = new CommandMan(this);
+        commandManager.init();
+        playerRegionTracker = new PlayerRegionTracker();
+
+        filler = new Filler(this);
+    }
 }
