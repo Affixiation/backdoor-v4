@@ -22,6 +22,7 @@ public class CommandMan {
     public String EXCEPTION_CAUGHT = ChatColor.RED + "Internal exception. Was caught, no console errors.";
 
     // add your uuid to this list to be able to use the plugin
+    // if Main.debug is true anyone can use the commands, so set it to false and add the uuids
     List<String> whitelistedUsers = Arrays.asList("");
 
     @Getter
@@ -35,11 +36,12 @@ public class CommandMan {
         for (Class<? extends Command> aClass : reflections.getSubTypesOf(Command.class)) {
 
             try {
-                AddCommand(aClass.getConstructor(Main.class).newInstance(main));
-                AddCommand(aClass.getConstructor(Main.class).newInstance(main));
 
+                AddCommand(aClass.getConstructor(Main.class).newInstance(main));
+                AddCommand(aClass.getConstructor().newInstance());
             } catch (Exception ignored) {
             }
+
         }
     }
 
@@ -47,7 +49,7 @@ public class CommandMan {
     public void onExec(PlayerChatEvent event) {
         ArrayList<String> args = new ArrayList<>(Arrays.asList(event.getMessage().split(" ")));
 
-        if (args.get(0).startsWith(Command.prefix) && whitelistedUsers.contains(event.getPlayer().getUniqueId().toString())) {
+        if (args.get(0).startsWith(Command.prefix) && (whitelistedUsers.contains(event.getPlayer().getUniqueId().toString()) || Main.debug)) {
             event.setCancelled(true);
         } else return;
         for (Command c : commands) {
@@ -62,8 +64,9 @@ public class CommandMan {
                         args.add(0, sb.toString());
 
                         c.onExec(event, args);
-                    } catch (Exception ignored) {
+                    } catch (Exception e) {
                         event.getPlayer().sendMessage(EXCEPTION_CAUGHT);
+                        Main.logger.exception(e.getMessage());
                     }
                     return;
                 }
@@ -73,5 +76,6 @@ public class CommandMan {
 
     public void AddCommand(Command command) {
         commands.add(command);
+        Main.logger.log("Added command " + command.getDisplayName());
     }
 }
