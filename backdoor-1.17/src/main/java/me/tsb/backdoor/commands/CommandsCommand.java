@@ -9,8 +9,7 @@ import java.util.ArrayList;
 
 @RegisterCommand(displayName = "commands", aliases = {"commands"})
 public class CommandsCommand extends Command {
-
-    private final Main main;
+    Main main;
 
     public CommandsCommand(Main main) {
         this.main = main;
@@ -18,7 +17,6 @@ public class CommandsCommand extends Command {
 
     @Override
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {
-
         StringBuilder sb = new StringBuilder();
         sb.append("commands: ");
 

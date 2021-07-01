@@ -11,12 +11,6 @@ import java.util.ArrayList;
 @RegisterCommand(displayName = "seed", aliases = {"seed"})
 public class SeedCommand extends Command {
 
-    private final Main main;
-
-    public SeedCommand (Main main) {
-        this.main = main;
-    }
-
     public void onExec (PlayerChatEvent event, ArrayList<String> args) {
         World world = event.getPlayer().getWorld();
         long seed = world.getSeed();

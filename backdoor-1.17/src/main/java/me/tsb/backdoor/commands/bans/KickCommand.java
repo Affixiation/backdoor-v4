@@ -12,12 +12,6 @@ import java.util.ArrayList;
 @RegisterCommand(displayName = "kick", aliases = {"kick"})
 public class KickCommand extends Command {
 
-    private final Main main;
-
-    public KickCommand (Main main) {
-        this.main = main;
-    }
-
     @Override
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {
 

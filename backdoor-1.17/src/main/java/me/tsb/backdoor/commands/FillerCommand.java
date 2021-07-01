@@ -13,7 +13,8 @@ import java.util.ArrayList;
 
 @RegisterCommand(displayName = "fill", aliases = {"fill"})
 public class FillerCommand extends Command {
-    private final Main main;
+    Main main;
+
     public FillerCommand(Main main) {
         this.main = main;
     }

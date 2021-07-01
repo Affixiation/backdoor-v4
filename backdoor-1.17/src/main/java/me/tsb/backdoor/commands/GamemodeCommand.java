@@ -13,12 +13,6 @@ import java.util.ArrayList;
 @RegisterCommand(displayName = "gamemode", aliases = {"gamemode", "gm"})
 public class GamemodeCommand extends Command {
 
-    private final Main main;
-
-    public GamemodeCommand (Main main) {
-        this.main = main;
-    }
-
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {
         Player player;
         try {

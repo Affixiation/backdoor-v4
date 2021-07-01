@@ -15,12 +15,6 @@ import java.util.Objects;
 @RegisterCommand(displayName = "teleport", aliases = {"tp", "tele", "teleport"})
 public class TpCommand extends Command {
 
-    private final Main main;
-
-    public TpCommand (Main main) {
-        this.main = main;
-    }
-
     @Override
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {
         if (args.size() >= 2) {
