@@ -10,7 +10,10 @@ import java.util.ArrayList;
 @RegisterCommand(displayName = "get logs", aliases = {"getlogs", "gl"})
 public class GetLogsCommand extends Command {
 
-    @Override
+    public GetLogsCommand(Main main) {
+        super(main);
+    }
+
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {
 
         event.getPlayer().sendMessage(Main.logger.getLogs());

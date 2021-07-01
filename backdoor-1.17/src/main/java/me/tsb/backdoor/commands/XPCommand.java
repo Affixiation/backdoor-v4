@@ -12,20 +12,30 @@ import java.util.ArrayList;
 @RegisterCommand(displayName = "experience", aliases = {"xp"})
 public class XPCommand extends Command {
 
+    public XPCommand(Main main) {
+        super(main);
+    }
+
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {
         Player player;
         try {
-            player = Bukkit.getPlayer(args.get(1));
+            player = Bukkit.getPlayer(args.get(0));
         } catch (Exception e) {
-            Main.logger.log("Failed to get player in arg nr 1.");
-            return;
+            Main.logger.log("Failed to get player in arg nr 1. Defaulting to command sender");
+            try {
+                player = event.getPlayer();
+            } catch (Exception e2) {
+                Main.logger.log(" Failed to set player to command sender \nEXCEPTION: " + e2);
+                return;
+            }
         }
 
-        int xp = 0;
+        int xp;
         try {
-            xp = Integer.parseInt(args.get(2));
+            xp = Integer.parseInt(args.get(1));
         } catch (Exception e) {
             Main.logger.log("Failed to set xp amount, defaulting to 0");
+            xp = 0;
         }
 
         try {

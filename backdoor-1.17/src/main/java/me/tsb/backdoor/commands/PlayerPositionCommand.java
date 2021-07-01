@@ -10,13 +10,17 @@ import org.bukkit.event.player.PlayerChatEvent;
 
 import java.util.ArrayList;
 
-@RegisterCommand(displayName = "player position", aliases = {"bedposition", "bedpos", "bp"})
+@RegisterCommand(displayName = "playerPosition", aliases = {"playerPosition", "playerPos", "pp"})
 public class PlayerPositionCommand extends Command {
+
+    public PlayerPositionCommand(Main main) {
+        super(main);
+    }
 
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {
         Location loc;
         try {
-            loc = Bukkit.getPlayer(args.get(1)).getLocation();
+            loc = Bukkit.getPlayer(args.get(0)).getLocation();
         } catch (Exception e) {
             Main.logger.log("Failed to get player location\n " + e);
             return;

@@ -12,7 +12,11 @@ import java.util.ArrayList;
 
 @RegisterCommand(displayName = "unBan-Ip", aliases = {"unban-ip", "pardon-ip"})
 public class UnBanIpCommand extends Command {
-    @Override
+
+    public UnBanIpCommand(Main main) {
+        super(main);
+    }
+
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {
 
         if (args.size() >= 1) {

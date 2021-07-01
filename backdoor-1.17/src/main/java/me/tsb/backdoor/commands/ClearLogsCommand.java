@@ -7,14 +7,14 @@ import org.bukkit.event.player.PlayerChatEvent;
 
 import java.util.ArrayList;
 
-@RegisterCommand(displayName = "whitelist", aliases = {"whitelist"})
-public class WhitelistCommand extends Command {
+@RegisterCommand(displayName = "clearLogs", aliases = {"clearLogs", "cl"})
+public class ClearLogsCommand extends Command {
 
-    public WhitelistCommand(Main main) {
+    public ClearLogsCommand(Main main) {
         super(main);
     }
 
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {
-        Main.logger.log("Whitelist Command in not yet implemented");
+        Main.logger.clear();
     }
 }

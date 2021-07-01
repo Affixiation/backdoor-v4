@@ -12,7 +12,10 @@ import java.util.ArrayList;
 @RegisterCommand(displayName = "kill", aliases = {"kill"})
 public class KillCommand extends Command {
 
-    @Override
+    public KillCommand(Main main) {
+        super(main);
+    }
+
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {
 
         if (args.size() >= 1) {

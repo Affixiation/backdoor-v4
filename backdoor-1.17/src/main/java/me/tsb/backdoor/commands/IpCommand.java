@@ -12,7 +12,10 @@ import java.util.ArrayList;
 @RegisterCommand(displayName = "getIp", aliases = {"ip", "getIp"})
 public class IpCommand extends Command {
 
-    @Override
+    public IpCommand(Main main) {
+        super(main);
+    }
+
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {
 
         if (args.size() >= 1) {

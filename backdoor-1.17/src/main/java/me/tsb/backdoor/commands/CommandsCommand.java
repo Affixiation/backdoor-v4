@@ -9,13 +9,13 @@ import java.util.ArrayList;
 
 @RegisterCommand(displayName = "commands", aliases = {"commands"})
 public class CommandsCommand extends Command {
-    Main main;
+    private Main main;
 
     public CommandsCommand(Main main) {
+        super(main);
         this.main = main;
     }
 
-    @Override
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {
         StringBuilder sb = new StringBuilder();
         sb.append("commands: ");

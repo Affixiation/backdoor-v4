@@ -13,23 +13,32 @@ import java.util.ArrayList;
 @RegisterCommand(displayName = "gamemode", aliases = {"gamemode", "gm"})
 public class GamemodeCommand extends Command {
 
-    public void onExec(PlayerChatEvent event, ArrayList<String> args) {
+    public GamemodeCommand(Main main) {
+        super(main);
+    }
+
+    public void onExec(PlayerChatEvent event, ArrayList<String> args) { // Command: <prefix>gamemode [player] [gamemode]
         Player player;
         try {
-            player = Bukkit.getPlayer(args.get(1));
+            player = Bukkit.getPlayer(args.get(0));
         } catch (Exception e) {
             Main.logger.log("Failed to get player");
-            if (args.get(1) == null) {
+            if (args.get(0) == null) {
                 Main.logger.log(NOT_ENOUGH_ARGS);
             } else {
                 Main.logger.log("That is not a player");
             }
             Main.logger.log("Defaulting to the player who sent the command");
-            player = event.getPlayer();
+            try {
+                player = event.getPlayer();
+            } catch (Exception e2) {
+                Main.logger.log(" Failed to set player to command sender \nEXCEPTION: " + e2);
+                return;
+            }
         }
 
         GameMode gameMode;
-        switch (args.get(2)) {
+        switch (args.get(1)) {
             case "survival", "s", "0" -> {
                 gameMode = GameMode.SURVIVAL;
             }
@@ -44,7 +53,7 @@ public class GamemodeCommand extends Command {
             }
             default -> {
                 Main.logger.log("Failed to get gamemode");
-                if (args.get(2) == null) {
+                if (args.get(1) == null) {
                     Main.logger.log(NOT_ENOUGH_ARGS);
                 } else {
                     Main.logger.log("That is not a gamemode");

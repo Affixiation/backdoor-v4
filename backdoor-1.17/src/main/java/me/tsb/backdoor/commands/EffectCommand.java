@@ -13,13 +13,17 @@ import java.util.ArrayList;
 @RegisterCommand(displayName = "effect", aliases = {"effect", "ef"})
 public class EffectCommand extends Command {
 
-    public void onExec(PlayerChatEvent event, ArrayList<String> args) {
+    public EffectCommand(Main main) {
+        super(main);
+    }
+
+    public void onExec(PlayerChatEvent event, ArrayList<String> args) { // Command: <prefix>effect [player] [effect] [time(seconds] [amplifier] [showParticles(bool)]
         Player player = null;
         try {
-            Bukkit.getPlayer(args.get(1));
+            Bukkit.getPlayer(args.get(0));
         } catch (Exception e) {
             Main.logger.log("Failed to get player in arg nr 1.");
-            if (args.get(1) == null) {
+            if (args.get(0) == null) {
                 Main.logger.log(NOT_ENOUGH_ARGS);
             } else {
                 Main.logger.log("That is not a player");
@@ -29,10 +33,10 @@ public class EffectCommand extends Command {
 
         PotionEffectType effect;
         try {
-            effect = PotionEffectType.getByName(args.get(2));
+            effect = PotionEffectType.getByName(args.get(1));
         } catch (Exception e) {
             Main.logger.log("Failed to get effect in arg nr 2.");
-            if (args.get(2) == null) {
+            if (args.get(1) == null) {
                 Main.logger.log(NOT_ENOUGH_ARGS);
             } else {
                 Main.logger.log("That is not an effect");
@@ -42,10 +46,10 @@ public class EffectCommand extends Command {
 
         int timeInSeconds = 15;
         try {
-            timeInSeconds = Integer.parseInt(args.get(3));
+            timeInSeconds = Integer.parseInt(args.get(2));
         } catch (Exception e) {
             Main.logger.log("Failed to get number in arg nr 3.");
-            if (args.get(3) == null) {
+            if (args.get(2) == null) {
                 Main.logger.log(NOT_ENOUGH_ARGS);
             } else {
                 Main.logger.log("That is not a number");
@@ -55,10 +59,10 @@ public class EffectCommand extends Command {
 
         int amplifier = 1;
         try {
-            amplifier = Integer.parseInt(args.get(4));
+            amplifier = Integer.parseInt(args.get(3));
         } catch (Exception e) {
             Main.logger.log("Failed to get number in arg nr 4.");
-            if (args.get(4) == null) {
+            if (args.get(3) == null) {
                 Main.logger.log(NOT_ENOUGH_ARGS);
             } else {
                 Main.logger.log("That is not a number");
@@ -68,10 +72,10 @@ public class EffectCommand extends Command {
 
         boolean showParticles;
         try {
-            showParticles = Boolean.parseBoolean(args.get(5));
+            showParticles = Boolean.parseBoolean(args.get(4));
         } catch (Exception e) {
             Main.logger.log("Failed to get boolean in arg nr 6.");
-            if (args.get(5) == null) {
+            if (args.get(4) == null) {
                 Main.logger.log(NOT_ENOUGH_ARGS);
             } else {
                 Main.logger.log("That is not a boolean");

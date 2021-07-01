@@ -12,11 +12,15 @@ import java.util.ArrayList;
 
 @RegisterCommand(displayName = "bed position", aliases = {"bedposition,bedpos,bp"})
 public class BedPositionCommand extends Command {
-    @Override
+
+    public BedPositionCommand(Main main) {
+        super(main);
+    }
+
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {
         Location loc;
         try {
-            loc = Bukkit.getPlayer(args.get(1)).getBedSpawnLocation();
+            loc = Bukkit.getPlayer(args.get(0)).getBedSpawnLocation();
         } catch (Exception e) {
             Main.logger.log("Failed to get player location\n " + e);
             return;
