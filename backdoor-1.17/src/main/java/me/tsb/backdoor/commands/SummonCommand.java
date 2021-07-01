@@ -13,6 +13,13 @@ import java.util.ArrayList;
 
 @RegisterCommand(displayName = "summon", aliases = {"summon", "su"})
 public class SummonCommand extends Command {
+
+    private final Main main;
+
+    public SummonCommand (Main main) {
+        this.main = main;
+    }
+
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {
         World world = event.getPlayer().getWorld();
         Player player = event.getPlayer();

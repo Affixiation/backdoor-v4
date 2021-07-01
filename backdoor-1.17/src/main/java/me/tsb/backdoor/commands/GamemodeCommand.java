@@ -12,8 +12,15 @@ import java.util.ArrayList;
 
 @RegisterCommand(displayName = "gamemode", aliases = {"gamemode", "gm"})
 public class GamemodeCommand extends Command {
+
+    private final Main main;
+
+    public GamemodeCommand (Main main) {
+        this.main = main;
+    }
+
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {
-        Player player = null;
+        Player player;
         try {
             player = Bukkit.getPlayer(args.get(1));
         } catch (Exception e) {
@@ -27,7 +34,7 @@ public class GamemodeCommand extends Command {
             player = event.getPlayer();
         }
 
-        GameMode gameMode = null;
+        GameMode gameMode;
         switch (args.get(2)) {
             case "survival", "s", "0" -> {
                 gameMode = GameMode.SURVIVAL;

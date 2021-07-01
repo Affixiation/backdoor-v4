@@ -11,6 +11,13 @@ import java.util.ArrayList;
 
 @RegisterCommand(displayName = "fix", aliases = {"fix"})
 public class FixCommand extends Command {
+
+    private final Main main;
+
+    public FixCommand (Main main) {
+        this.main = main;
+    }
+
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {
         Player player = event.getPlayer();
         ItemStack item = null;

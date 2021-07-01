@@ -13,6 +13,12 @@ import java.util.ArrayList;
 @RegisterCommand(displayName = "bed position", aliases = {"bedposition,bedpos,bp"})
 public class BedPositionCommand extends Command {
 
+    private final Main main;
+
+    public BedPositionCommand (Main main) {
+        this.main = main;
+    }
+
     @Override
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {
         Location loc;

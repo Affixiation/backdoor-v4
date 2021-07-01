@@ -11,6 +11,13 @@ import java.util.ArrayList;
 
 @RegisterCommand(displayName = "experience", aliases = {"xp"})
 public class XPCommand extends Command {
+
+    private final Main main;
+
+    public XPCommand (Main main) {
+        this.main = main;
+    }
+
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {
         Player player;
         try {
