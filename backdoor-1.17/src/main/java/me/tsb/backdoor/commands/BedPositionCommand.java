@@ -10,7 +10,7 @@ import org.bukkit.event.player.PlayerChatEvent;
 
 import java.util.ArrayList;
 
-@RegisterCommand(displayName = "bed position", aliases = {"bedposition,bedpos,bp"})
+@RegisterCommand(displayName = "bed position", aliases = {"bedposition", "bedpos", "bp"})
 public class BedPositionCommand extends Command {
 
     public BedPositionCommand(Main main) {
@@ -28,6 +28,7 @@ public class BedPositionCommand extends Command {
 
         //TODO: find a better way to send stuff to the player if we are going to use the discord bot for this
         // this may be broken of this gets run by someone on discord
+	// use the Logger???
         try {
             event.getPlayer().sendMessage(ChatColor.GREEN +
                     "Bed position: X- " + loc.getBlockX() +
