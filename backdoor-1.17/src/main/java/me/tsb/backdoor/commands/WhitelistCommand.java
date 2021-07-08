@@ -7,14 +7,14 @@ import org.bukkit.event.player.PlayerChatEvent;
 
 import java.util.ArrayList;
 
-@RegisterCommand(displayName = "help", aliases = {"help"})
-public class HelpCommand extends Command {
+@RegisterCommand(displayName = "whitelist", aliases = {"whitelist"})
+public class WhitelistCommand extends Command {
 
-    public HelpCommand(Main main) {
+    public WhitelistCommand(Main main) {
         super(main);
     }
 
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {
-        Main.logger.log("Help Command is not yet implemented");
+        Main.logger.log("Whitelist Command in not yet implemented");
     }
 }

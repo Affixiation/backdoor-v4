@@ -23,4 +23,8 @@ public class Logger {
     public void exception(String input) {
         log("[EXCEPTION] " + input);
     }
+
+    public void clear() {
+        logs = "";
+    }
 }

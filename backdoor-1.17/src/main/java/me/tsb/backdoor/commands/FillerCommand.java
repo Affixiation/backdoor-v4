@@ -13,12 +13,13 @@ import java.util.ArrayList;
 
 @RegisterCommand(displayName = "fill", aliases = {"fill"})
 public class FillerCommand extends Command {
-    private final Main main;
+    private Main main;
+
     public FillerCommand(Main main) {
+        super(main);
         this.main = main;
     }
 
-    @Override
     public void onExec(PlayerChatEvent event, ArrayList<String> args) {
         if (args.size() >= 1) {
             if (args.get(0).equalsIgnoreCase("pos1")) {
