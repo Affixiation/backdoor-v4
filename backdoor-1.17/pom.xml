@@ -47,6 +47,7 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
+                            <!-- martin please don't leave stuff like this lying around -->
                             <!-- <outputDirectory>C:\mc\1.17 test server paper\plugins</outputDirectory> -->
                             <createDependencyReducedPom>false</createDependencyReducedPom>
                             <shadedArtifactAttached>true</shadedArtifactAttached>
