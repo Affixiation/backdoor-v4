@@ -10,8 +10,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>backdoor-1.12.2</module>
-        <module>backdoor-1.16.5</module>
         <module>backdoor-1.17</module>
     </modules>
 

@@ -28,3 +28,5 @@ modules.xml
 *.tar.gz
 *.rar
 hs_err_pid*
+# End of https://www.toptal.com/developers/gitignore/api/java,intellij+iml
+/backdoor-1.17/target/
