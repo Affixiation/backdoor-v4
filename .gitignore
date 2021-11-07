@@ -4,6 +4,7 @@
 .idea/
 .idea_modules/
 out/
+target/
 
 # Files
 *.iws
