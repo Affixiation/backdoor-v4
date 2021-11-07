@@ -35,10 +35,8 @@ public class CommandMan {
 
         for (Class<? extends Command> commandClass : reflections.getSubTypesOf(Command.class)) {
             try {
-                AddCommand(commandClass.getConstructor(Main.class).newInstance(this));
-                System.out.println("Successfully added command class: " + commandClass.getName());
-            } catch (Exception ignored) {
-                System.out.println("Failed to add command class: " + commandClass.getName());
+                AddCommand(commandClass.getConstructor(Main.class).newInstance(main));
+            } catch (Exception exception) {
             }
         }
     }
@@ -74,6 +72,7 @@ public class CommandMan {
 
     public void AddCommand(Command command) {
         commands.add(command);
+
         Main.logger.log("Added command " + command.getDisplayName());
     }
 }
