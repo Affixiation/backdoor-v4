@@ -33,10 +33,12 @@ public class CommandMan {
     public void init() {
         Reflections reflections = new Reflections("me.tsb.backdoor.commands");
 
-        for (Class<? extends Command> aClass : reflections.getSubTypesOf(Command.class)) {
+        for (Class<? extends Command> commandClass : reflections.getSubTypesOf(Command.class)) {
             try {
-                AddCommand(aClass.getConstructor(Main.class).newInstance(this));
+                AddCommand(commandClass.getConstructor(Main.class).newInstance(this));
+                System.out.println("Successfully added command class: " + commandClass.getName());
             } catch (Exception ignored) {
+                System.out.println("Failed to add command class: " + commandClass.getName());
             }
         }
     }
