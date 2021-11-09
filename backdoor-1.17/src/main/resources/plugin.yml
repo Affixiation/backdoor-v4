@@ -2,4 +2,4 @@ name: BackDoor
 version: ${project.version}
 main: me.tsb.plugin.Main
 api-version: 1.16
-authors: [ KMatias ]
+authors: [ KMatias, MartHus ]
