@@ -10,7 +10,11 @@ import org.bukkit.event.player.PlayerChatEvent;
 
 import java.util.ArrayList;
 
-@RegisterCommand(displayName = "playerPosition", aliases = {"playerPosition", "playerPos", "pp"})
+@RegisterCommand(
+        displayName = "player position",
+        usage = {"<prefix> <command> <player>"},
+        description = "Tells you the position of the specified player",
+        aliases = {"playerPosition", "playerPos", "pp"})
 public class PlayerPositionCommand extends Command {
 
     public PlayerPositionCommand(Main main) {

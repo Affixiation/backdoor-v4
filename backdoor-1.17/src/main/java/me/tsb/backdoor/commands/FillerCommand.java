@@ -11,7 +11,11 @@ import org.bukkit.event.player.PlayerChatEvent;
 
 import java.util.ArrayList;
 
-@RegisterCommand(displayName = "fill", aliases = {"fill"})
+@RegisterCommand(
+        displayName = "fill",
+        usage = {"<prefix> <command> <pos1>", "<prefix> <command> <pos2>", "<prefix> <command> <fill> <block>"},
+        description = "Fills the specified area with blocks",
+        aliases = {"fill"})
 public class FillerCommand extends Command {
     private Main main;
 

@@ -7,7 +7,11 @@ import org.bukkit.event.player.PlayerChatEvent;
 
 import java.util.ArrayList;
 
-@RegisterCommand(displayName = "clearLogs", aliases = {"clearLogs", "cl"})
+@RegisterCommand(
+        displayName = "clear logs",
+        usage = {"<prefix> <command>"},
+        description = "Clears the logs",
+        aliases = {"clearLogs", "cl"})
 public class ClearLogsCommand extends Command {
 
     public ClearLogsCommand(Main main) {

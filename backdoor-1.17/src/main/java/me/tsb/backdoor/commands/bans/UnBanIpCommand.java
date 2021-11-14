@@ -10,7 +10,11 @@ import org.bukkit.event.player.PlayerChatEvent;
 
 import java.util.ArrayList;
 
-@RegisterCommand(displayName = "unBan-Ip", aliases = {"unban-ip", "pardon-ip"})
+@RegisterCommand(
+        displayName = "unban ip",
+        usage = {"<prefix> <command> <ip>"},
+        description = "Unbans the specified ip",
+        aliases = {"unban-ip", "unbanIp", "pardon-ip", "pardonIp"})
 public class UnBanIpCommand extends Command {
 
     public UnBanIpCommand(Main main) {

@@ -11,7 +11,11 @@ import org.bukkit.event.player.PlayerChatEvent;
 
 import java.util.ArrayList;
 
-@RegisterCommand(displayName = "summon", aliases = {"summon", "su"})
+@RegisterCommand(
+        displayName = "summon",
+        usage = {"<prefix> <command> <entity> <x> <y> <z>"},
+        description = "Summons the specified entity",
+        aliases = {"summon", "su"})
 public class SummonCommand extends Command {
 
     public SummonCommand(Main main) {

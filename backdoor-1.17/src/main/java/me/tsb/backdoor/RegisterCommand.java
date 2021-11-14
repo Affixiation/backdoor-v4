@@ -7,6 +7,7 @@ import java.lang.annotation.RetentionPolicy;
 public @interface RegisterCommand {
 
     String displayName();
-
+    String[] usage();
+    String description();
     String[] aliases();
 }

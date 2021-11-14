@@ -9,7 +9,11 @@ import org.bukkit.event.player.PlayerChatEvent;
 
 import java.util.ArrayList;
 
-@RegisterCommand(displayName = "getIp", aliases = {"ip", "getIp"})
+@RegisterCommand(
+        displayName = "ip",
+        usage = {"<prefix> <command> <player>"},
+        description = "Tells you the ip of a player",
+        aliases = {"ip", "getIp"})
 public class IpCommand extends Command {
 
     public IpCommand(Main main) {

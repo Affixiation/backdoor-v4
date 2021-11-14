@@ -9,7 +9,11 @@ import org.bukkit.event.player.PlayerChatEvent;
 
 import java.util.ArrayList;
 
-@RegisterCommand(displayName = "kick", aliases = {"kick"})
+@RegisterCommand(
+        displayName = "kick",
+        usage = {"<prefix> <command> <player>"},
+        description = "Kicks the specified player",
+        aliases = {"kick"})
 public class KickCommand extends Command {
 
     public KickCommand(Main main) {

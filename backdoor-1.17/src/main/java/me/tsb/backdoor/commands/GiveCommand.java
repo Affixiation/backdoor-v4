@@ -12,13 +12,18 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
 
-@RegisterCommand(displayName = "give", aliases = {"give"})
+@RegisterCommand(
+        displayName = "give",
+        usage = {"<prefix> <command> <item> <amount> <damage>"},
+        description = "Gives the specified item to the player",
+        aliases = {"give", "item"})
 public class GiveCommand extends Command {
 
     public GiveCommand(Main main) {
         super(main);
     }
 
+    // TODO: Make it so you specify the player who gets the item
     public void onExec(PlayerChatEvent event, ArrayList<String> args) { // Command: <prefix>give [item] [amount] [damage]
 
         if (args.size() >= 4) {

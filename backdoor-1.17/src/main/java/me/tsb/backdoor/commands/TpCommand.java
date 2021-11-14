@@ -12,7 +12,14 @@ import org.bukkit.event.player.PlayerChatEvent;
 import java.util.ArrayList;
 import java.util.Objects;
 
-@RegisterCommand(displayName = "teleport", aliases = {"tp", "tele", "teleport"})
+@RegisterCommand(
+        displayName = "teleport",
+        usage = {
+                "<prefix> <command> player <player>",
+                "<prefix> <command> coordinates <player> <x> <y> <z>",
+                "<prefix> <command> otherPlayer <player <otherPlayer>"},
+        description = "Teleports the specified player",
+        aliases = {"teleport", "tele", "tp"})
 public class TpCommand extends Command {
 
     public TpCommand(Main main) {
@@ -51,7 +58,7 @@ public class TpCommand extends Command {
                             Double.parseDouble(args.get(5))));
                 }
             }
-            if (args.get(0).equalsIgnoreCase("otherPlayers")) {
+            if (args.get(0).equalsIgnoreCase("otherPlayers")) { // isn't this the same as otherPlayer?
                 if (args.size() == 3) {
                     Bukkit.getPlayer(args.get(1)).teleport(Bukkit.getPlayer(args.get(2)).getLocation());
                 }

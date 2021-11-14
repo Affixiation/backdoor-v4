@@ -11,7 +11,11 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.ArrayList;
 
 
-@RegisterCommand(displayName = "enchant", aliases = {"enchant"})
+@RegisterCommand(
+        displayName = "enchant",
+        usage = {"<prefix> <command> <player> <enchantment> <level>"},
+        description = "Enchants the held item of the specified player",
+        aliases = {"enchant", "ench"})
 public class EnchantCommand extends Command {
 
     public EnchantCommand(Main main) {
@@ -42,7 +46,7 @@ public class EnchantCommand extends Command {
 
             int level = 0;
             try {
-                Integer.parseInt(args.get(1));
+                level = Integer.parseInt(args.get(1));
             } catch (Exception e) {
                 Main.logger.log(" Failed to get an integer from arg nr 1 \nEXCEPTION: " + e);
                 event.getPlayer().sendMessage(ChatColor.RED + "Failed to get enchantment level from arg nr 1");

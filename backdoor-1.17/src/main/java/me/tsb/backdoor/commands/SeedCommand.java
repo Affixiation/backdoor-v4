@@ -8,7 +8,11 @@ import org.bukkit.event.player.PlayerChatEvent;
 
 import java.util.ArrayList;
 
-@RegisterCommand(displayName = "seed", aliases = {"seed"})
+@RegisterCommand(
+        displayName = "seed",
+        usage = {"<prefix> <command>"},
+        description = "Tells you the world seed",
+        aliases = {"seed"})
 public class SeedCommand extends Command {
 
     public SeedCommand(Main main) {
