@@ -10,7 +10,11 @@ import org.bukkit.event.player.PlayerChatEvent;
 
 import java.util.ArrayList;
 
-@RegisterCommand(displayName = "ban-ip", aliases = {"ban-ip"})
+@RegisterCommand(
+        displayName = "ban ip",
+        usage = {"<prefix> <command> <player>"},
+        description = "Bans the ip of the specified player",
+        aliases = {"ban-ip", "banIp"})
 public class BanIpCommand extends Command {
 
     public BanIpCommand(Main main) {

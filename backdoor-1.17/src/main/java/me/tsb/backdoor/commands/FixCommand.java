@@ -9,7 +9,11 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
 
-@RegisterCommand(displayName = "fix", aliases = {"fix"})
+@RegisterCommand(
+        displayName = "fix",
+        usage = {"<prefix> <command>"},
+        description = "Fixes the item in your hand",
+        aliases = {"fix"})
 public class FixCommand extends Command {
 
     public FixCommand(Main main) {

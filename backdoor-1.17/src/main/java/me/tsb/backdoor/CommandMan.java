@@ -36,7 +36,7 @@ public class CommandMan {
         for (Class<? extends Command> commandClass : reflections.getSubTypesOf(Command.class)) {
             try {
                 AddCommand(commandClass.getConstructor(Main.class).newInstance(main));
-            } catch (Exception exception) {
+            } catch (Exception ignored) {
             }
         }
     }
@@ -51,13 +51,9 @@ public class CommandMan {
         for (Command c : commands) {
 
             for (String s : c.getAliases()) {
-                if (args.get(0).equalsIgnoreCase(Command.prefix + s)) {
+                if (args.get(1).equalsIgnoreCase(s) ) {
                     try {
-
-                        StringBuilder sb = new StringBuilder(args.get(0));
-                        sb.delete(0, Command.prefix.length());
-
-                        args.add(0, sb.toString());
+                        args.remove(0);
 
                         c.onExec(event, args);
                     } catch (Exception e) {

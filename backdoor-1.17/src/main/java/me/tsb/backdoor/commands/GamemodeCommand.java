@@ -10,7 +10,11 @@ import org.bukkit.event.player.PlayerChatEvent;
 
 import java.util.ArrayList;
 
-@RegisterCommand(displayName = "gamemode", aliases = {"gamemode", "gm"})
+@RegisterCommand(
+        displayName = "gamemode",
+        usage = {"<prefix> <command> <player> <gamemode>"},
+        description = "Tells you what this command does",
+        aliases = {"gamemode", "gm"})
 public class GamemodeCommand extends Command {
 
     public GamemodeCommand(Main main) {

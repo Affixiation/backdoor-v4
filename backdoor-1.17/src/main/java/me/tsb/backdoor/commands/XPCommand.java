@@ -9,7 +9,11 @@ import org.bukkit.event.player.PlayerChatEvent;
 
 import java.util.ArrayList;
 
-@RegisterCommand(displayName = "experience", aliases = {"xp"})
+@RegisterCommand(
+        displayName = "experience",
+        usage = {"<prefix> <command> <player> <amount"},
+        description = "Gives the specified player a specified amount of xp",
+        aliases = {"experience", "xp"})
 public class XPCommand extends Command {
 
     public XPCommand(Main main) {

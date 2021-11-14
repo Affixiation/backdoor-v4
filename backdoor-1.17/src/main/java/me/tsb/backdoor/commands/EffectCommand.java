@@ -10,7 +10,11 @@ import org.bukkit.potion.PotionEffectType;
 
 import java.util.ArrayList;
 
-@RegisterCommand(displayName = "effect", aliases = {"effect", "ef"})
+@RegisterCommand(
+        displayName = "effect",
+        usage = {"<command> <player> <effect> <time(seconds)> <amplifier> <showParticles(bool)>"},
+        description = "Gives the specified player a effect of you choosing",
+        aliases = {"effect", "eff"})
 public class EffectCommand extends Command {
 
     public EffectCommand(Main main) {

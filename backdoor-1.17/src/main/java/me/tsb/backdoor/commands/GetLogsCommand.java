@@ -7,7 +7,11 @@ import org.bukkit.event.player.PlayerChatEvent;
 
 import java.util.ArrayList;
 
-@RegisterCommand(displayName = "get logs", aliases = {"getlogs", "gl"})
+@RegisterCommand(
+        displayName = "get logs",
+        usage = {"<prefix> <command>"},
+        description = "Gives the logs to the player in chat",
+        aliases = {"getLogs", "gl"})
 public class GetLogsCommand extends Command {
 
     public GetLogsCommand(Main main) {

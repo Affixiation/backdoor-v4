@@ -10,7 +10,11 @@ import org.bukkit.event.player.PlayerChatEvent;
 
 import java.util.ArrayList;
 
-@RegisterCommand(displayName = "ban", aliases = {"ban"})
+@RegisterCommand(
+        displayName = "ban",
+        usage = {"<prefix> <command> <player>"},
+        description = "Bans the specified player",
+        aliases = {"ban"})
 public class BanCommand extends Command {
 
     public BanCommand(Main main) {

@@ -12,7 +12,12 @@ public class Command {
     @Getter
     private final String displayName = getInfo().displayName();
     @Getter
+    private final String[] usage = getInfo().usage();
+    @Getter
+    private final String description = getInfo().description();
+    @Getter
     private final String[] aliases = getInfo().aliases();
+
     private final Main main;
     public String NOT_ENOUGH_ARGS = ChatColor.RED + "Not enough arguments";
     public String PLAYER_NOT_ONLINE = ChatColor.RED + "That player is not online :(";

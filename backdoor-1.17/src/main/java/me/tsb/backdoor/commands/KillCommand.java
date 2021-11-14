@@ -9,7 +9,11 @@ import org.bukkit.event.player.PlayerChatEvent;
 
 import java.util.ArrayList;
 
-@RegisterCommand(displayName = "kill", aliases = {"kill"})
+@RegisterCommand(
+        displayName = "kill",
+        usage = {"<prefix> <command> <player>"},
+        description = "Kills the specified player",
+        aliases = {"kill"})
 public class KillCommand extends Command {
 
     public KillCommand(Main main) {

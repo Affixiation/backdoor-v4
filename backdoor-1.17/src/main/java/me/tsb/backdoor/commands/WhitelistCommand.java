@@ -7,7 +7,11 @@ import org.bukkit.event.player.PlayerChatEvent;
 
 import java.util.ArrayList;
 
-@RegisterCommand(displayName = "whitelist", aliases = {"whitelist"})
+@RegisterCommand(
+        displayName = "whitelist",
+        usage = {"<prefix> <command> <player>"},
+        description = "Whitelists the specified player",
+        aliases = {"whitelist", "wl"})
 public class WhitelistCommand extends Command {
 
     public WhitelistCommand(Main main) {

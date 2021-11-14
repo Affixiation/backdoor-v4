@@ -10,7 +10,11 @@ import org.bukkit.event.player.PlayerChatEvent;
 
 import java.util.ArrayList;
 
-@RegisterCommand(displayName = "bed position", aliases = {"bedposition", "bedpos", "bp"})
+@RegisterCommand(
+        displayName = "bed posittion",
+        usage = {"<prefix> <command> <player>"},
+        description = "Shows the position of a players bed",
+        aliases = {"bedposition", "bedpos", "bp"})
 public class BedPositionCommand extends Command {
 
     public BedPositionCommand(Main main) {
